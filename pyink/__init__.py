@@ -133,7 +133,6 @@ class ink:
         print(pink + "pink" + ENDC)
         print(lightcyan + "lightcyan" + ENDC)
 
-    '\033['
 
     @classmethod
     def print_everything_possible(cls):
