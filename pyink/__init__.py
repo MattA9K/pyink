@@ -140,5 +140,10 @@ class ink:
         this_ink = '\033[91m'
         i = 0
         while i < 100:
-            print(i, end=" \033[" + str(i) + "m -~=[" + str(i) + "]=~- \n")
+            if i < 30 and i > 10:
+                pass
+            elif i > 47 and i < 90:
+                pass
+            else:
+                print(i, end=" \033[" + str(i) + "m -~=[" + str(i) + "]=~- \n")
             i += 1
