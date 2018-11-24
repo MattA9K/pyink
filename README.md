@@ -13,6 +13,10 @@ pyink is a fast and easy way to print to the python console using as little code
 ###Example Usage:
 ```python
 
+from pyink import ink
+
+
+
 def post_stuff_to_log(request, intercept):
     ink.print_gray(request.method, "")
     ink.print_purple(" ~~~> ", "\n")
@@ -20,3 +24,6 @@ def post_stuff_to_log(request, intercept):
     return HttpResponse("console logged successfully.")
 
 ```
+
+
+![alt text](https://imgur.com/0Z8RwAk "pyink example console output")
