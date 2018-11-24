@@ -26,4 +26,4 @@ def post_stuff_to_log(request, intercept):
 ```
 
 
-![alt text](https://imgur.com/0Z8RwAk "pyink example console output")
+![alt text](https://i.imgur.com/0Z8RwAk.png "pyink example console output")
