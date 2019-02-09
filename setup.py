@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(name='PyInk',
-      version='0.1',
+      version='0.2',
       description='Colored output for your console.',
       long_description='Fast and easy way to print colored output to your console.',
       classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Console :: Shell',
       ],
       keywords='console shell color print output',

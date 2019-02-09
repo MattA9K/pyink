@@ -133,16 +133,30 @@ class ink:
         print(pink + "pink" + ENDC)
         print(lightcyan + "lightcyan" + ENDC)
 
-
     @classmethod
     def print_everything_possible(cls):
+        os.system("clear")
         this_ink = '\033[91m'
         i = 0
-        while i < 100:
-            if i < 30 and i > 10:
-                pass
-            elif i > 47 and i < 90:
-                pass
-            else:
-                print(i, end=" \033[" + str(i) + "m -~=[" + str(i) + "]=~- \n")
+        while i < 150:
+            if i < 108 and i > 89:
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
+                print("\033[" + str(i + 1) + "m", end='')
+                print()
+            elif i < 48 and i > 30:
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
+                print("\033[" + str(i + 1) + "m", end='')
+                print()
+            elif i < 48 and i > 30:
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
+                print("\033[" + str(i + 1) + "m", end='')
+                print()
+            elif i > 0 and i < 9:
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
+                print("\033[" + str(i + 1) + "m", end='')
+                print()
             i += 1
