@@ -1,6 +1,7 @@
 # Matt Andrzejczuk (c) 2018
 # MIT License
 
+import os
 class ink:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
