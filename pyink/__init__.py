@@ -1,138 +1,195 @@
-# Matt Andrzejczuk (c) 2018
-# MIT License
-
 import os
-class ink:
-    FAIL = '\033[91m'
+
+
+
+class InkColor:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
+    DIM = '\033[2m'
     UNDERLINE = '\033[4m'
-    TEAL = '\033[96m'
+    FLASHING = '\033[5m'
+    INVERT = '\033[7m'
+    LIGHTCYAN = '\033[96m'
+    CYAN = '\033[36m'
     BLACK = '\033[97m'
+    LIGHTGREY = '\033[37m'
     GRAY = '\033[90m'
-    black = '\033[30m'
-    red = '\033[31m'
-    green = '\033[32m'
-    orange = '\033[33m'
-    blue = '\033[34m'
-    purple = '\033[35m'
-    cyan = '\033[36m'
-    lightgrey = '\033[37m'
-    darkgrey = '\033[90m'
-    lightred = '\033[91m'
-    lightgreen = '\033[92m'
-    yellow = '\033[93m'
-    lightblue = '\033[94m'
-    pink = '\033[95m'
-    lightcyan = '\033[96m'
+    DARKGRAY = '\033[30m'
+    RED = '\033[31m'
+    LIGHTRED = '\033[91m'
+    GREEN = '\033[32m'
+    LIGHTGREEN = '\033[92m'
+    BLUE = '\033[34m'
+    LIGHTBLUE = '\033[94m'
+    PURPLE = '\033[35m'
+    LIGHTPURPLE = '\033[95m'
+    LIGHTYELLOW = '\033[93m'
+    YELLOW = '\033[33m'
+    BG_GRAY = '\033[40m'
+    BG_BLACK = '\033[100m'
+    BG_RED = '\033[41m'
+    BG_LIGHTRED = '\033[101m'
+    BG_BLUE = '\033[44m'
+    BG_LIGHTBLUE = '\033[104m'
+    BG_PURPLE = '\033[45m'
+    BG_LIGHTPURPLE = '\033[105m'
+    BG_LIGHTYELLOW = '\033[43m'
+    BG_YELLOW = '\033[103m'
+    BG_GREEN = '\033[42m'
+    BG_LIGHTGREEN = '\033[102m'
+    BG_LIGHTCYAN = '\033[46m'
+    BG_CYAN = '\033[106m'
+
+
+class ink:
+    # '\033[0m'
+    ENDC = InkColor.ENDC
+    # '\033[1m'
+    BOLD = InkColor.BOLD
+    # '\033[2m'
+    DIM = InkColor.DIM
+    # '\033[4m'
+    UNDERLINE = InkColor.UNDERLINE
+    # '\033[5m'
+    FLASHING = InkColor.FLASHING
+    # '\033[96m'
+    LIGHTCYAN = InkColor.LIGHTCYAN
+    # '\033[36m'
+    CYAN = InkColor.CYAN
+    # '\033[97m'
+    BLACK = InkColor.BLACK
+    # '\033[37m'
+    LIGHTGREY = InkColor.LIGHTGREY
+    # '\033[90m'
+    GRAY = InkColor.GRAY
+    # '\033[30m'
+    DARKGRAY = InkColor.DARKGRAY
+    # '\033[31m'
+    RED = InkColor.RED
+    # '\033[91m'
+    LIGHTRED = InkColor.LIGHTRED
+    # '\033[32m'
+    GREEN = InkColor.GREEN
+    # '\033[92m'
+    LIGHTGREEN = InkColor.LIGHTGREEN
+    # '\033[34m'
+    BLUE = InkColor.BLUE
+    # '\033[94m'
+    LIGHTBLUE = InkColor.LIGHTBLUE
+    # '\033[35m'
+    PURPLE = InkColor.PURPLE
+    # '\033[95m'
+    LIGHTPURPLE = InkColor.LIGHTPURPLE
+    # '\033[93m'
+    LIGHTYELLOW = InkColor.LIGHTYELLOW
+    # '\033[33m'
+    YELLOW = InkColor.YELLOW
+    # '\033[40m'
+    BG_GRAY = InkColor.BG_GRAY
+    # '\033[100m'
+    BG_BLACK = InkColor.BG_BLACK
+    # '\033[41m'
+    BG_RED = InkColor.BG_RED
+    # '\033[101m'
+    BG_LIGHTRED = InkColor.BG_LIGHTRED
+    # '\033[44m'
+    BG_BLUE = InkColor.BG_BLUE
+    # '\033[104m'
+    BG_LIGHTBLUE = InkColor.BG_LIGHTBLUE
+    # '\033[45m'
+    BG_PURPLE = InkColor.BG_PURPLE
+    # '\033[105m'
+    BG_LIGHTPURPLE = InkColor.BG_LIGHTPURPLE
+    # '\033[43m'
+    BG_LIGHTYELLOW = InkColor.BG_LIGHTYELLOW
+    # '\033[103m'
+    BG_YELLOW = InkColor.BG_YELLOW
+    # '\033[42m'
+    BG_GREEN = InkColor.BG_GREEN
+    # '\033[102m'
+    BG_LIGHTGREEN = InkColor.BG_LIGHTGREEN
+    # '\033[46m'
+    BG_LIGHTCYAN = InkColor.BG_LIGHTCYAN
+    # '\033[106m'
+    BG_CYAN = InkColor.BG_CYAN
+
 
     @classmethod
-    def print_blue(cls, log, _e):
-        print(cls.lightblue, end="")
-        print(log, end=_e)
+    def pl(cls, print_var, color_1: InkColor, color_2: InkColor, _e=""):
+        """
+                ink.pl('this text is blue and bold.', ink.BLUE, ink.BOLD, "\n")
+        """
+        print(color_1, end="")
+        print(color_2, end="")
+        print(print_var, end=_e)
         print(cls.ENDC, end="")
+        print(cls.ENDC, end="")
+
     @classmethod
-    def print_darkblue(cls, log, _e):
-        print(cls.blue, end="")
-        print(log, end=_e)
+    def p(cls, print_var, color: InkColor, _e=""):
+        """
+        ink.p('this text is red.', ink.RED, "\n")
+        """
+        print(color, end="")
+        print(print_var, end=_e)
         print(cls.ENDC, end="")
-    @classmethod
-    def print_red(cls, log, _e):
-        print(cls.red, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_lightred(cls, log, _e):
-        print(cls.lightred, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_orange(cls, log, _e):
-        print(cls.orange, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_green(cls, log, _e):
-        print(cls.lightgreen, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_pink(cls, log, _e):
-        print(cls.pink, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_yellow(cls, log, _e):
-        print(cls.yellow, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_cyan(cls, log, _e):
-        print(cls.cyan, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_purple(cls, log, _e):
-        print(cls.purple, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_lightcyan(cls, log, _e):
-        print(cls.lightcyan, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
-    @classmethod
-    def print_gray(cls, log, _e):
-        print(cls.GRAY, end="")
-        print(log, end=_e)
-        print(cls.ENDC, end="")
+
+
 
     @classmethod
     def help_examples(cls):
-        FAIL = '\033[91m'
+
         ENDC = '\033[0m'
         BOLD = '\033[1m'
         UNDERLINE = '\033[4m'
-        TEAL = '\033[96m'
-        BLACK = '\033[97m'
-        GRAY = '\033[90m'
-        black = '\033[30m'
-        red = '\033[31m'
-        green = '\033[32m'
-        orange = '\033[33m'
-        blue = '\033[34m'
-        purple = '\033[35m'
-        cyan = '\033[36m'
-        lightgrey = '\033[37m'
-        darkgrey = '\033[90m'
-        lightred = '\033[91m'
-        lightgreen = '\033[92m'
-        yellow = '\033[93m'
-        lightblue = '\033[94m'
-        pink = '\033[95m'
-        lightcyan = '\033[96m'
 
-        print(FAIL + "FAIL" + ENDC)
-        print(BOLD + "BOLD" + ENDC)
-        print(UNDERLINE + "UNDERLINE" + ENDC)
-        print(TEAL + "TEAL" + ENDC)
-        print(BLACK + "BLACK" + ENDC)
-        print(GRAY + "GRAY" + ENDC)
-        print(black + "black" + ENDC)
-        print(red + "red" + ENDC)
-        print(green + "green" + ENDC)
-        print(orange + "orange" + ENDC)
-        print(blue + "blue" + ENDC)
-        print(purple + "purple" + ENDC)
-        print(cyan + "cyan" + ENDC)
-        print(lightgrey + "lightgrey" + ENDC)
-        print(darkgrey + "darkgrey" + ENDC)
-        print(lightred + "lightred" + ENDC)
-        print(lightgreen + "lightgreen" + ENDC)
-        print(yellow + "yellow" + ENDC)
-        print(lightblue + "lightblue" + ENDC)
-        print(pink + "pink" + ENDC)
-        print(lightcyan + "lightcyan" + ENDC)
+
+        LIGHTCYAN = '\033[96m'
+        CYAN = '\033[36m'
+
+        BLACK = '\033[97m'
+        LIGHTGREY = '\033[37m'
+
+        GRAY = '\033[90m'
+        BLACK = '\033[30m'
+
+        RED = '\033[31m'
+        LIGHTRED = '\033[91m'
+
+        GREEN = '\033[32m'
+        LIGHTGREEN = '\033[92m'
+
+        BLUE = '\033[34m'
+        LIGHTBLUE = '\033[94m'
+
+        PURPLE = '\033[35m'
+        LIGHTPURPLE = '\033[95m'
+
+        LIGHTYELLOW = '\033[93m'
+        YELLOW = '\033[33m'
+
+        BG_GRAY = '\033[40m'
+        BG_BLACK = '\033[100m'
+
+        BG_RED = '\033[41m'
+        BG_LIGHTRED = '\033[101m'
+
+        BG_BLUE = '\033[44m'
+        BG_LIGHTBLUE = '\033[104m'
+
+        BG_PURPLE = '\033[45m'
+        BG_LIGHTPURPLE = '\033[105m'
+
+        BG_LIGHTYELLOW = '\033[43m'
+        BG_YELLOW = '\033[103m'
+
+        BG_GREEN = '\033[42m'
+        BG_LIGHTGREEN = '\033[102m'
+
+        BG_LIGHTCYAN = '\033[46m'
+        BG_CYAN = '\033[106m'
+
+
 
     @classmethod
     def print_everything_possible(cls):
@@ -141,23 +198,24 @@ class ink:
         i = 0
         while i < 150:
             if i < 108 and i > 89:
-                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█  \\033[" + str(i) + "m  █▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
                 print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
-                print("\033[" + str(i + 1) + "m", end='')
+                print("\033[" + str(i+1) + "m", end='')
                 print()
             elif i < 48 and i > 30:
-                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█  \\033[" + str(i) + "m  █▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
                 print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
-                print("\033[" + str(i + 1) + "m", end='')
+                print("\033[" + str(i+1) + "m", end='')
                 print()
             elif i < 48 and i > 30:
-                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█  \\033[" + str(i) + "m  █▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
                 print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
-                print("\033[" + str(i + 1) + "m", end='')
+                print("\033[" + str(i+1) + "m", end='')
                 print()
             elif i > 0 and i < 9:
-                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█\\033[" + str(i) + "m█▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
+                print(cls.ENDC, end=" \033[" + str(i) + "m ◀█  \\033[" + str(i) + "m  █▶☀ ︎✏︎ ✈ ︎♚ ♛ ♜ ♝ ♞")
                 print(' ♠ ︎♣ ︎♥ ︎♦ ︎● ◎ ■ ❖ ◆ ▶ ︎► ◀ ︎✣ ✢ ✤ ✶ ✱ ✿ ✖ ︎✔ ︎✱ ✮ ◢ ◣ ◢ ◤ ◥ ◤', end="" + cls.ENDC)
-                print("\033[" + str(i + 1) + "m", end='')
+                print("\033[" + str(i+1) + "m", end='')
                 print()
             i += 1
+

@@ -1,7 +1,7 @@
 from setuptools import setup
 
-setup(name='PyInk',
-      version='0.2.1',
+setup(name='pyink',
+      version='0.3',
       description='Colored output for your console.',
       long_description='Fast and easy way to print colored output to your console.',
       classifiers=[
@@ -18,4 +18,4 @@ setup(name='PyInk',
       packages=['pyink'],
       install_requires=[],
       include_package_data=True,
-      zip_safe=False)
+      zip_safe=True)
